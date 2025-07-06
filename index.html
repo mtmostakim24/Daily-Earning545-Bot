@@ -935,8 +935,34 @@
   </div>
   
   <script>
-    const userId = Math.floor(Math.random() * 1000000);
-    const username = "User" + userId;
+    // Generate persistent user ID and username
+    let userId = localStorage.getItem("userId");
+    let username = localStorage.getItem("username");
+    
+    // If not stored, generate new values
+    if (!userId) {
+      userId = Math.floor(Math.random() * 1000000);
+      localStorage.setItem("userId", userId);
+    }
+    
+    if (!username) {
+      // Check if we're in Telegram environment
+      if (window.Telegram && window.Telegram.WebApp) {
+        const user = window.Telegram.WebApp.initDataUnsafe.user;
+        if (user && user.username) {
+          username = user.username;
+        } else if (user && user.first_name) {
+          username = user.first_name;
+          if (user.last_name) username += " " + user.last_name;
+        } else {
+          username = "User" + userId;
+        }
+      } else {
+        username = "User" + userId;
+      }
+      localStorage.setItem("username", username);
+    }
+    
     const today = new Date().toLocaleDateString();
 
     // Initialize user data
@@ -1274,15 +1300,29 @@
     
     function shareReferralLink() {
       const refLink = `https://t.me/Daily_Earning_545_Bot?start=ref_${userId}`;
-      if (navigator.share) {
+      
+      // Check if we're in a Telegram environment
+      if (window.Telegram && window.Telegram.WebApp) {
+        // Use Telegram's share functionality
+        window.Telegram.WebApp.share(refLink, { title: 'Earn with Daily Earning545' }, (success) => {
+          if (!success) {
+            // Fallback to copy if sharing fails
+            copyReferralLink();
+          }
+        });
+      } else if (navigator.share) {
+        // Use Web Share API for browsers that support it
         navigator.share({
           title: 'Earn with Daily Earning545',
           text: 'Join Daily Earning545 and start earning money by completing simple tasks!',
           url: refLink
         })
-        .then(() => console.log('Shared successfully'))
-        .catch((error) => showNotification('Sharing failed: ' + error, 'error'));
+        .catch((error) => {
+          console.error('Sharing failed:', error);
+          copyReferralLink();
+        });
       } else {
+        // Fallback to copying the link
         copyReferralLink();
       }
     }
