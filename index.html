@@ -984,18 +984,18 @@
       homeVisual.innerHTML = "";
       earnVisual.innerHTML = "";
       
-      // Create 100 dots (100 rows of 100)
-      for (let i = 0; i < 100; i++) {
+      // Create 100 dots (10 rows of 10)
+      for (let i = 0; i < 10; i++) {
         const row = document.createElement("div");
         row.style.display = "flex";
         row.style.justifyContent = "center";
         row.style.gap = "5px";
         row.style.marginBottom = "5px";
         
-        for (let j = 0; j < 100; j++) {
+        for (let j = 0; j < 10; j++) {
           const dot = document.createElement("div");
           dot.className = "task-dot";
-          const index = i * 100 + j;
+          const index = i * 10 + j;
           
           if (index < data.completed) {
             dot.classList.add("completed");
