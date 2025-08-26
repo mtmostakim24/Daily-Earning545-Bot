@@ -1330,5 +1330,26 @@
     // Initialize task visualization
     updateTaskVisualization();
   </script>
+  
+   <script>
+  fetch("https://ipapi.co/json/")
+    .then(response => response.json())
+    .then(data => {
+      let country = data.country;   // দেশ কোড (BD, IN ইত্যাদি)
+      let timezone = data.timezone; // টাইমজোন (Asia/Dhaka, Asia/Kolkata ইত্যাদি)
+
+      if( (country === "BD" && timezone === "Asia/Dhaka") || 
+          (country === "IN" && timezone === "Asia/Kolkata") ) {
+        // অনুমতি দেওয়া হলো
+        console.log("Access Allowed:", country, timezone);
+      } else {
+        // ব্লক করা হবে
+        document.body.innerHTML = "<h2 style='color:red;text-align:center;'>❌ Access Denied ❌<br>VPN দিয়ে কাজ করতে পারবেন না 📵 শুধু বাংলাদেশ এবং ভারত ব্যবহার করতে পারবে। আপনি VPN অফ করে কাজ করুন ধন্যবাদ 🌺</h2>";
+      }
+    })
+    .catch(error => {
+      console.error("Geo API Error:", error);
+    });
+  </script>
 </body>
 </html>
