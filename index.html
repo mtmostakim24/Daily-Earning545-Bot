@@ -760,7 +760,7 @@
       </div>
       <div class="card-content">
         <p class="info-label" style="margin-bottom: 20px; text-align: center;">
-          <i class="fas fa-info-circle"></i> Earn money by viewing ads. Stay on the ad page for 15 seconds to complete a task and earn $0.025 per task!
+          <i class="fas fa-info-circle"></i> Earn money by viewing ads. Stay on the ad page for 45 seconds to complete a task and earn $0.025 per task!
         </p>
         
         <div class="task-counter">
@@ -1210,7 +1210,7 @@
           clearInterval(check);
           const duration = (Date.now() - start) / 1000;
           
-          if (duration >= 15) {
+          if (duration >= 45) {
             data.completed++;
             data.remaining = 100 - data.completed;
             data.todaysEarning += 0.025;
@@ -1220,7 +1220,7 @@
             updateDisplay();
             showNotification("✅ Task completed! $0.025 added to your balance.", "success");
           } else {
-            showNotification("⏱️ You must view the ad for at least 15 seconds to complete the task!", "error");
+            showNotification("⏱️ You must view the ad for at least 45 seconds to complete the task!", "error");
           }
         }
       }, 500);
