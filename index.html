@@ -1048,18 +1048,18 @@
       homeVisual.innerHTML = "";
       earnVisual.innerHTML = "";
       
-      // Create 100 dots (10 rows of 15)
-      for (let i = 0; i < 10; i++) {
+      // Create 200 dots (20 rows of 10)
+      for (let i = 0; i < 20; i++) {
         const row = document.createElement("div");
         row.style.display = "flex";
         row.style.justifyContent = "center";
         row.style.gap = "5px";
         row.style.marginBottom = "5px";
         
-        for (let j = 0; j < 20; j++) {
+        for (let j = 0; j < 10; j++) {
           const dot = document.createElement("div");
           dot.className = "task-dot";
-          const index = i * 20 + j;
+          const index = i * 10 + j;
           
           if (index < data.completed) {
             dot.classList.add("completed");
@@ -1075,8 +1075,8 @@
 
     // FIXED taskLinks array with commas
     const taskLinks = [
-      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
       "https://spin-win-earn-24.vercel.app",
