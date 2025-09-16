@@ -629,7 +629,7 @@
       <div class="card-content">
         <div class="info-row">
           <span class="info-label">Total Tasks</span>
-          <span class="info-value" id="total">150</span>
+          <span class="info-value" id="total">200</span>
         </div>
         <div class="info-row">
           <span class="info-label">Completed</span>
@@ -637,7 +637,7 @@
         </div>
         <div class="info-row">
           <span class="info-label">Remaining</span>
-          <span class="info-value" id="remaining-card">150</span>
+          <span class="info-value" id="remaining-card">200</span>
         </div>
         
         <div class="progress-container">
@@ -684,7 +684,7 @@
       </div>
       
       <div class="referral-content">
-        <p>Invite friends and earn $1 for each successful referral. Share your link and start earning!</p>
+        <p>Invite friends and earn $0.50 for each successful referral. Share your link and start earning!</p>
         
         <div class="referral-stats">
           <div class="referral-stat">
@@ -725,12 +725,12 @@
         <label>Withdrawal Method</label>
         <select id="withdraw-method">
           <option>Select a method</option>
-          <option>Bkash $30</option>
-          <option>Nagad $30</option>
+          <option>Bkash $35</option>
+          <option>Nagad $35</option>
           <option>Payeer $50</option>
           <option>USDT (TRC20) $50</option>
-          <option>Skrill $30</option>
-          <option>Neteller $30</option>
+          <option>Skrill $35</option>
+          <option>Neteller $35</option>
           <option>Perfect Money $50</option>
         </select>
       </div>
@@ -765,7 +765,7 @@
         
         <div class="task-counter">
           <div class="counter-item">
-            <div class="counter-value" id="etotal">150</div>
+            <div class="counter-value" id="etotal">200</div>
             <div class="counter-label">Total Tasks</div>
           </div>
           <div class="counter-item">
@@ -773,7 +773,7 @@
             <div class="counter-label">Completed</div>
           </div>
           <div class="counter-item">
-            <div class="counter-value" id="eremaining">150</div>
+            <div class="counter-value" id="eremaining">200</div>
             <div class="counter-label">Remaining</div>
           </div>
         </div>
@@ -893,7 +893,7 @@
       </div>
       
       <div class="referral-content">
-        <p>Earn $1 for every friend who signs up using your referral link!</p>
+        <p>Earn $0.50 for every friend who signs up using your referral link!</p>
         
         <div class="referral-link">
           <span id="profile-ref-link">https://t.me/Daily_Earning_545_Bot?start=ref_123456</span>
@@ -979,11 +979,11 @@
     };
 
     let data = JSON.parse(localStorage.getItem("dailyEarningData")) || {
-      date: today, completed: 0, remaining: 150, todaysEarning: 0
+      date: today, completed: 0, remaining: 200, todaysEarning: 0
     };
 
     if (data.date !== today) {
-      data = { date: today, completed: 0, remaining: 150, todaysEarning: 0 };
+      data = { date: today, completed: 0, remaining: 200, todaysEarning: 0 };
     }
 
     // Initialize display
@@ -1056,10 +1056,10 @@
         row.style.gap = "5px";
         row.style.marginBottom = "5px";
         
-        for (let j = 0; j < 15; j++) {
+        for (let j = 0; j < 20; j++) {
           const dot = document.createElement("div");
           dot.className = "task-dot";
-          const index = i * 15 + j;
+          const index = i * 20 + j;
           
           if (index < data.completed) {
             dot.classList.add("completed");
@@ -1075,153 +1075,203 @@
 
     // FIXED taskLinks array with commas
     const taskLinks = [
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
+      "https://spin-win-earn-24.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://mc-999.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
@@ -1242,7 +1292,7 @@
     }
 
     function startTask() {
-      if (data.completed >= 150) {
+      if (data.completed >= 200) {
         showNotification("You have completed all tasks for today!", "warning");
         return;
       }
@@ -1260,9 +1310,9 @@
           clearInterval(check);
           const duration = (Date.now() - start) / 1000;
           
-          if (duration >= 30) {
+          if (duration >= 32) {
             data.completed++;
-            data.remaining = 150 - data.completed;
+            data.remaining = 200 - data.completed;
             data.todaysEarning += 0.021;
             userData.lifetimeEarning += 0.021;
             userData.totalTasks++;
@@ -1285,8 +1335,8 @@
         showNotification("Please enter a valid amount", "error");
         return;
       }
-      if (amount < 30) {
-        showNotification("Minimum withdrawal amount is $30", "error");
+      if (amount < 35) {
+        showNotification("Minimum withdrawal amount is $35", "error");
         return;
       }
       if (amount > userData.lifetimeEarning) {
