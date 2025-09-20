@@ -1394,7 +1394,7 @@
     function copyReferralLink() {
       const refLink = `https://t.me/Daily_Earning_545_Bot?start=ref_${userId}`;
       navigator.clipboard.writeText(refLink)
-        .then(() => showNotification("✅ Referral link copied! You earn $1 for each successful referral.", "success"))
+        .then(() => showNotification("✅ Referral link copied! You earn $0.50 for each successful referral.", "success"))
         .catch(() => showNotification("Failed to copy link", "error"));
     }
     
