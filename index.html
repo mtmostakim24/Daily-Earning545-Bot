@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily Earning545 | Premium Earning Platform</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
     * {
       margin: 0;
@@ -558,6 +559,27 @@
       border-left: 4px solid var(--warning);
     }
     
+    /* Loading Spinner */
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(67, 97, 238, 0.1);
+      border-left-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
     /* Responsive */
     @media (min-width: 768px) {
       .cards-container {
@@ -598,11 +620,11 @@
     <div class="profile">
       <div class="profile-header">
         <div class="profile-img-container">
-          <img src="https://i.ibb.co/6R45cM6C/Polish-20250529-015530961.jpg" alt="Profile">
+          <img id="profile-picture" src="https://i.ibb.co/6R45cM6C/Polish-20250529-015530961.jpg" alt="Profile">
         </div>
         <div class="profile-info">
-          <div class="name" id="username">Username</div>
-          <div class="user-id">ID: <span id="user-id">123456</span></div>
+          <div class="name" id="username">Loading...</div>
+          <div class="user-id">ID: <span id="user-id">Loading...</span></div>
         </div>
       </div>
       
@@ -698,7 +720,7 @@
         </div>
         
         <div class="referral-link">
-          <span id="ref-link">https://t.me/Daily_Earning_545_Bot?start=ref_123456</span>
+          <span id="ref-link">Loading...</span>
           <i class="fas fa-copy" onclick="copyReferralLink()"></i>
         </div>
         
@@ -749,6 +771,30 @@
         <i class="fas fa-paper-plane"></i> Submit Withdrawal
       </button>
     </div>
+    <button class="button telegram-proof-btn" onclick="openTelegramChannel()">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <i class="fab fa-telegram" style="font-size: 1.2rem;"></i>
+    <span>Daily Withdrawal Proof Channel</span>
+  </div>
+</button>
+
+<style>
+.telegram-proof-btn {
+  background: linear-gradient(135deg, #0088cc 0%, #00aced 100%) !important;
+  margin-top: 10px !important;
+}
+
+.telegram-proof-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 136, 204, 0.4) !important;
+}
+</style>
+
+<script>
+function openTelegramChannel() {
+  window.open('https://t.me/Daily_Earning545_Bot', '_blank');
+}
+</script>
   </div>
   
   <!-- Earn Section -->
@@ -773,7 +819,7 @@
             <div class="counter-label">Completed</div>
           </div>
           <div class="counter-item">
-            <div class="counter-value" id="eremaining">100</div>
+           <div class="counter-value" id="eremaining">100</div>
             <div class="counter-label">Remaining</div>
           </div>
         </div>
@@ -792,6 +838,35 @@
           <i class="fas fa-play"></i> Start Earning ▶
         </button>
       </div>
+      <button class="button youtube-guide-btn" onclick="openYouTubeGuide()">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+    <div style="width: 24px; height: 24px; background: white; border-radius: 4px; 
+                display: flex; align-items: center; justify-content: center;">
+      <i class="fab fa-youtube" style="font-size: 1rem; color: #FF0000;"></i>
+    </div>
+    <span style="font-weight: 600";>How to use the bot</span>
+  </div>
+</button>
+
+<style>
+.youtube-guide-btn {
+  background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%) !important;
+  margin-top: 10px !important;
+  border: 2px solid #FF0000 !important;
+}
+
+.youtube-guide-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5) !important;
+  background: linear-gradient(135deg, #CC0000 0%, #990000 100%) !important;
+}
+</style>
+
+<script>
+function openYouTubeGuide() {
+  window.open('https://youtu.be/APh2F9Goyt0?si=bnlHBTJdf-W8Sbjw', '_blank');
+}
+</script>
     </div>
     
     <div class="card">
@@ -818,17 +893,17 @@
         
         <div class="profile-info-item">
           <div class="info-title">Username</div>
-          <div class="info-data" id="profile-username">Username</div>
+          <div class="info-data" id="profile-username">Loading...</div>
         </div>
         
         <div class="profile-info-item">
           <div class="info-title">User ID</div>
-          <div class="info-data" id="profile-user-id">123456</div>
+          <div class="info-data" id="profile-user-id">Loading...</div>
         </div>
         
         <div class="profile-info-item">
           <div class="info-title">Join Date</div>
-          <div class="info-data" id="join-date">2023-10-15</div>
+          <div class="info-data" id="join-date">Loading...</div>
         </div>
       </div>
     </div>
@@ -896,7 +971,7 @@
         <p>Earn $0.50 for every friend who signs up using your referral link!</p>
         
         <div class="referral-link">
-          <span id="profile-ref-link">https://t.me/Daily_Earning_545_Bot?start=ref_123456</span>
+          <span id="profile-ref-link">Loading...</span>
           <i class="fas fa-copy" onclick="copyReferralLink()"></i>
         </div>
         
@@ -935,63 +1010,251 @@
   </div>
   
   <script>
-    // Generate persistent user ID and username
-    let userId = localStorage.getItem("userId");
-    let username = localStorage.getItem("username");
+    // Telegram Bot API Configuration
+    const BOT_TOKEN = "7811173242:AAGeYgntYuB906-hMhovnk5PE_pxHbtgFhs"; // Replace with your bot token
+    const API_BASE_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
     
-    // If not stored, generate new values
-    if (!userId) {
-      userId = Math.floor(Math.random() * 1000000);
-      localStorage.setItem("userId", userId);
-    }
+    // Global variables
+    let userId = null;
+    let username = null;
+    let userData = null;
+    let data = null;
     
-    if (!username) {
-      // Check if we're in Telegram environment
-      if (window.Telegram && window.Telegram.WebApp) {
-        const user = window.Telegram.WebApp.initDataUnsafe.user;
-        if (user && user.username) {
-          username = user.username;
-        } else if (user && user.first_name) {
-          username = user.first_name;
-          if (user.last_name) username += " " + user.last_name;
+    // Initialize the app
+    async function initApp() {
+      try {
+        // Check if we're in Telegram environment
+        if (window.Telegram && window.Telegram.WebApp) {
+          await initTelegramUser();
         } else {
-          username = "User" + userId;
+          // Fallback for testing outside Telegram
+          await initTestUser();
         }
-      } else {
-        username = "User" + userId;
+        
+        // Initialize user data
+        await loadUserData();
+        
+        // Update display
+        updateDisplay();
+        
+        // Check for referral parameter
+        checkReferral();
+        
+      } catch (error) {
+        console.error("Error initializing app:", error);
+        showNotification("Error loading user data. Please try again.", "error");
       }
-      localStorage.setItem("username", username);
     }
     
-    const today = new Date().toLocaleDateString();
-
-    // Initialize user data
-    let userData = JSON.parse(localStorage.getItem("MTEarningData")) || {
-      userId, 
-      username, 
-      referrals: 0,
-      referralEarnings: 0,
-      pendingReferrals: 0,
-      lifetimeEarning: 0,
-      withdrew: 0,
-      totalTasks: 0,
-      joinDate: new Date().toLocaleDateString()
-    };
-
-    let data = JSON.parse(localStorage.getItem("dailyEarningData")) || {
-      date: today, completed: 0, remaining: 100, todaysEarning: 0
-    };
-
-    if (data.date !== today) {
-      data = { date: today, completed: 0, remaining: 100, todaysEarning: 0 };
+    // Initialize Telegram user
+    async function initTelegramUser() {
+      const tg = window.Telegram.WebApp;
+      
+      // Expand the app to full height
+      tg.expand();
+      
+      // Get user data from Telegram
+      const user = tg.initDataUnsafe.user;
+      
+      if (user) {
+        userId = user.id;
+        username = user.username || `${user.first_name}${user.last_name ? ' ' + user.last_name : ''}`;
+        
+        // Update profile picture if available
+        if (user.photo_url) {
+          document.getElementById("profile-picture").src = user.photo_url;
+        }
+        
+        // Store user info in localStorage
+        localStorage.setItem("userId", userId);
+        localStorage.setItem("username", username);
+        
+        console.log("Telegram user initialized:", { userId, username });
+      } else {
+        throw new Error("Could not get Telegram user data");
+      }
     }
+    
+    // Initialize test user (for development outside Telegram)
+    async function initTestUser() {
+      userId = localStorage.getItem("userId");
+      username = localStorage.getItem("username");
+      
+      // If not stored, generate new values
+      if (!userId) {
+        userId = Math.floor(Math.random() * 1000000);
+        localStorage.setItem("userId", userId);
+      }
+      
+      if (!username) {
+        username = "User" + userId;
+        localStorage.setItem("username", username);
+      }
+      
+      console.log("Test user initialized:", { userId, username });
+    }
+    
+    // Load user data from server
+    async function loadUserData() {
+      const today = new Date().toLocaleDateString();
+      
+      try {
+        // Try to get user data from server
+        const response = await fetch(`${API_BASE_URL}/getUserData?user_id=${userId}`);
+        
+        if (response.ok) {
+          const serverData = await response.json();
+          userData = serverData.result || {};
+          
+          // If user doesn't exist on server, create them
+          if (!userData.userId) {
+            await createUserOnServer();
+          }
+        } else {
+          // If server request fails, use localStorage
+          await loadUserDataFromLocalStorage(today);
+        }
+      } catch (error) {
+        console.error("Error loading user data from server:", error);
+        // Fallback to localStorage
+        await loadUserDataFromLocalStorage(today);
+      }
+    }
+    
+    // Load user data from localStorage (fallback)
+    async function loadUserDataFromLocalStorage(today) {
+      userData = JSON.parse(localStorage.getItem("MTEarningData")) || {
+        userId, 
+        username, 
+        referrals: 0,
+        referralEarnings: 0,
+        pendingReferrals: 0,
+        lifetimeEarning: 0,
+        withdrew: 0,
+        totalTasks: 0,
+        joinDate: new Date().toLocaleDateString()
+      };
 
-    // Initialize display
-    updateDisplay();
+      data = JSON.parse(localStorage.getItem("dailyEarningData")) || {
+        date: today, completed: 0, remaining: 100, todaysEarning: 0
+      };
 
-    function updateStorage() {
+      if (data.date !== today) {
+        data = { date: today, completed: 0, remaining: 100, todaysEarning: 0 };
+      }
+    }
+    
+    // Create user on server
+    async function createUserOnServer() {
+      userData = {
+        userId, 
+        username, 
+        referrals: 0,
+        referralEarnings: 0,
+        pendingReferrals: 0,
+        lifetimeEarning: 0,
+        withdrew: 0,
+        totalTasks: 0,
+        joinDate: new Date().toLocaleDateString()
+      };
+      
+      // In a real implementation, you would send this to your server
+      // For now, we'll just store it locally
       localStorage.setItem("MTEarningData", JSON.stringify(userData));
+      
+      const today = new Date().toLocaleDateString();
+      data = { date: today, completed: 0, remaining: 100, todaysEarning: 0 };
       localStorage.setItem("dailyEarningData", JSON.stringify(data));
+    }
+    
+    // Update user data on server
+    async function updateUserDataOnServer() {
+      try {
+        // In a real implementation, you would send this to your server
+        // For now, we'll just store it locally
+        localStorage.setItem("MTEarningData", JSON.stringify(userData));
+        localStorage.setItem("dailyEarningData", JSON.stringify(data));
+        
+        // Example of how you might send data to your server
+        // await fetch(`${API_BASE_URL}/updateUserData`, {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ user_id: userId, userData, data })
+        // });
+      } catch (error) {
+        console.error("Error updating user data on server:", error);
+      }
+    }
+    
+    // Check for referral parameter
+    function checkReferral() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const refParam = urlParams.get('start');
+      
+      if (refParam && refParam.startsWith('ref_')) {
+        const referrerId = refParam.substring(4);
+        
+        // Don't count self-referral
+        if (referrerId != userId) {
+          processReferral(referrerId);
+        }
+      }
+    }
+    
+    // Process referral
+    async function processReferral(referrerId) {
+      try {
+        // Check if this user was already referred
+        const referredBy = localStorage.getItem("referredBy");
+        
+        if (!referredBy) {
+          // Mark this user as referred
+          localStorage.setItem("referredBy", referrerId);
+          
+          // Add to referrer's pending referrals
+          // In a real implementation, you would update this on the server
+          // For now, we'll just show a notification
+          showNotification("You've been referred by a friend! Complete 100 tasks to activate the referral.", "success");
+          
+          // Here you would update the referrer's data on the server
+          // await fetch(`${API_BASE_URL}/addPendingReferral`, {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({ referrer_id: referrerId, referred_id: userId })
+          // });
+        }
+      } catch (error) {
+        console.error("Error processing referral:", error);
+      }
+    }
+    
+    // Check and activate referrals when user completes tasks
+    async function checkReferralActivation() {
+      const referredBy = localStorage.getItem("referredBy");
+      
+      if (referredBy && userData.totalTasks >= 100) {
+        try {
+          // Activate the referral
+          // In a real implementation, you would update this on the server
+          // await fetch(`${API_BASE_URL}/activateReferral`, {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({ referrer_id: referredBy, referred_id: userId })
+          // });
+          
+          // Clear the referral marker
+          localStorage.removeItem("referredBy");
+          
+          showNotification("Congratulations! Your referral has been activated.", "success");
+        } catch (error) {
+          console.error("Error activating referral:", error);
+        }
+      }
+    }
+    
+    // Update storage
+    function updateStorage() {
+      updateUserDataOnServer();
     }
 
     function updateDisplay() {
@@ -1048,7 +1311,7 @@
       homeVisual.innerHTML = "";
       earnVisual.innerHTML = "";
       
-      // Create 150 dots (10 rows of 15)
+      // Create 100 dots (10 rows of 10)
       for (let i = 0; i < 10; i++) {
         const row = document.createElement("div");
         row.style.display = "flex";
@@ -1073,7 +1336,7 @@
       }
     }
 
-    // FIXED taskLinks array with commas
+    // Task links array
     const taskLinks = [
       "https://premium-sm-offer.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
@@ -1175,7 +1438,6 @@
       "https://tomake-chai-vlona.vercel.app",
       "https://premium-sm-offer.vercel.app",
       "https://tomake-chai-vlona.vercel.app",
-      
     ];
 
     function showNotification(message, type) {
@@ -1216,8 +1478,13 @@
             data.todaysEarning += 0.025;
             userData.lifetimeEarning += 0.025;
             userData.totalTasks++;
+            
             updateStorage();
             updateDisplay();
+            
+            // Check if referral should be activated
+            checkReferralActivation();
+            
             showNotification("✅ Task completed! $0.025 added to your balance.", "success");
           } else {
             showNotification("⏱️ You must view the ad for at least 45 seconds to complete the task!", "error");
@@ -1327,29 +1594,203 @@
       }
     }
 
-    // Initialize task visualization
-    updateTaskVisualization();
+    // Initialize the app when the page loads
+    window.addEventListener('DOMContentLoaded', initApp);
   </script>
   
-   <script>
-  fetch("https://ipapi.co/json/")
-    .then(response => response.json())
-    .then(data => {
-      let country = data.country;   // দেশ কোড (BD, IN ইত্যাদি)
-      let timezone = data.timezone; // টাইমজোন (Asia/Dhaka, Asia/Kolkata ইত্যাদি)
+  <script>
+    // Geo-blocking script
+    fetch("https://ipapi.co/json/")
+      .then(response => response.json())
+      .then(data => {
+        let country = data.country;   // দেশ কোড (BD, IN ইত্যাদি)
+        let timezone = data.timezone; // টাইমজোন (Asia/Dhaka, Asia/Kolkata ইত্যাদি)
 
-      if( (country === "BD" && timezone === "Asia/Dhaka") || 
-          (country === "IN" && timezone === "Asia/Kolkata") ) {
-        // অনুমতি দেওয়া হলো
-        console.log("Access Allowed:", country, timezone);
-      } else {
-        // ব্লক করা হবে
-        document.body.innerHTML = "<h2 style='color:red;text-align:center;'>❌ Access Denied ❌<br>Daily Earning545 Bot এ VPN দিয়ে কাজ করতে পারবে না। ⚠ আপনি যদি VPN ব‍্যবহার করেন, অনুগ্রহ করে VPN বন্ধ করে আবার চেষ্টা করুন ধন্যবাদ🌺</h2>";
-      }
-    })
-    .catch(error => {
-      console.error("Geo API Error:", error);
-    });
+        if( (country === "BD" && timezone === "Asia/Dhaka") || 
+            (country === "IN" && timezone === "Asia/Kolkata") ) {
+          // অনুমতি দেওয়া হলো
+          console.log("Access Allowed:", country, timezone);
+        } else {
+          // ব্লক করা হবে
+          document.body.innerHTML = "<h2 style='color:red;text-align:center;'>❌ Access Denied ❌<br>Daily Earning545 Bot এ VPN দিয়ে কাজ করতে পারবে না। ⚠ আপনি যদি VPN ব‍্যবহার করেন, অনুগ্রহ করে VPN বন্ধ করে আবার চেষ্টা করুন ধন্যবাদ🌺</h2>";
+        }
+      })
+      .catch(error => {
+        console.error("Geo API Error:", error);
+      });
   </script>
+  
+  <!-- Welcome Message -->
+<div class="welcome-toast" id="welcomeToast">
+  <div class="toast-content">
+    <div class="toast-header">
+      <div class="toast-icon">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="toast-text">
+        <h3>স্বাগতম! 👋</h3>
+        <p>Daily Earning545 এ আপনার আয়ের যাত্রা শুরু হোক</p>
+      </div>
+      <button class="toast-close" onclick="closeWelcomeToast()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="toast-features">
+      <span class="feature-tag">💰 টাস্ক প্রতি $0.025</span>
+      <span class="feature-tag">👥 রেফার $0.50</span>
+      <span class="feature-tag">🚀 দৈনিক ১০০ টাস্ক</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.welcome-toast {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  max-width: 320px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideInRight 0.5s ease-out;
+  border-left: 4px solid #4361ee;
+  overflow: hidden;
+}
+
+.toast-content {
+  padding: 0;
+}
+
+.toast-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 20px 15px 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.toast-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #4361ee, #4cc9f0);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.toast-text {
+  flex: 1;
+}
+
+.toast-text h3 {
+  color: #1e293b;
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.toast-text p {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toast-close:hover {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.toast-features {
+  display: flex;
+  gap: 8px;
+  padding: 15px 20px 20px 20px;
+  flex-wrap: wrap;
+}
+
+.feature-tag {
+  background: rgba(67, 97, 238, 0.1);
+  color: #4361ee;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .welcome-toast {
+    top: 70px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
+</style>
+
+<script>
+function closeWelcomeToast() {
+  const toast = document.getElementById('welcomeToast');
+  toast.style.animation = 'slideOutRight 0.3s ease-out forwards';
+  setTimeout(() => {
+    toast.style.display = 'none';
+  }, 300);
+}
+
+// Show welcome message every time
+document.addEventListener('DOMContentLoaded', function() {
+  const toast = document.getElementById('welcomeToast');
+  setTimeout(() => {
+    toast.style.display = 'block';
+  }, 1000);
+  
+  // Auto hide after 8 seconds
+  setTimeout(() => {
+    if (toast.style.display !== 'none') {
+      closeWelcomeToast();
+    }
+  }, 8000);
+});
+</script>
 </body>
 </html>
