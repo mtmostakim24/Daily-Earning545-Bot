@@ -1280,7 +1280,7 @@ function openYouTubeGuide() {
       // Update referral section
       document.getElementById("ref-earned").innerText = "$" + userData.referralEarnings.toFixed(2);
       document.getElementById("referral-count").innerText = userData.referrals;
-      document.getElementById("ref-link").innerText = `https://t.me/Daily_Earning_545_Bot?start=ref_${userId}`;
+      document.getElementById("ref-link").innerText = `https://t.me/DailyEarning545_Bot?start=ref_${userId}`;
       
       // Update profile page
       document.getElementById("profile-username").innerText = username;
@@ -1293,7 +1293,7 @@ function openYouTubeGuide() {
       document.getElementById("profile-lifetime-earning").innerText = "$" + userData.lifetimeEarning.toFixed(3);
       document.getElementById("join-date").innerText = userData.joinDate;
       document.getElementById("profile-pending-refs").innerText = userData.pendingReferrals;
-      document.getElementById("profile-ref-link").innerText = `https://t.me/Daily_Earning_545_Bot?start=ref_${userId}`;
+      document.getElementById("profile-ref-link").innerText = `https://t.me/DailyEarning545_Bot?start=ref_${userId}`;
       
       // Update earn section
       document.getElementById("ecompleted").innerText = data.completed;
@@ -1609,14 +1609,14 @@ function openYouTubeGuide() {
     }
 
     function copyReferralLink() {
-      const refLink = `https://t.me/Daily_Earning_545_Bot?start=ref_${userId}`;
+      const refLink = `https://t.me/DailyEarning545_Bot?start=ref_${userId}`;
       navigator.clipboard.writeText(refLink)
         .then(() => showNotification("✅ Referral link copied! You earn $0.50 for each successful referral.", "success"))
         .catch(() => showNotification("Failed to copy link", "error"));
     }
     
     function shareReferralLink() {
-      const refLink = `https://t.me/Daily_Earning_545_Bot?start=ref_${userId}`;
+      const refLink = `https://t.me/DailyEarning545_Bot?start=ref_${userId}`;
       
       // Check if we're in a Telegram environment
       if (window.Telegram && window.Telegram.WebApp) {
