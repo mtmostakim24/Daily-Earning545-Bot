@@ -806,7 +806,7 @@ function openTelegramChannel() {
       </div>
       <div class="card-content">
         <p class="info-label" style="margin-bottom: 20px; text-align: center;">
-          <i class="fas fa-info-circle"></i> Earn money by viewing ads. Stay on the ad page for 30 seconds to complete a task and earn $0.021 per task!
+          <i class="fas fa-info-circle"></i> Earn money by viewing ads. Stay on the ad page for 45 seconds to complete a task and earn $0.021 per task!
         </p>
         
         <div class="task-counter">
@@ -1522,7 +1522,7 @@ function openYouTubeGuide() {
           clearInterval(check);
           const duration = (Date.now() - start) / 1000;
           
-          if (duration >= 30) {
+          if (duration >= 45) {
             data.completed++;
             data.remaining = 150 - data.completed;
             data.todaysEarning += 0.021;
@@ -1537,7 +1537,7 @@ function openYouTubeGuide() {
             
             showNotification("✅ Task completed! $0.021 added to your balance.", "success");
           } else {
-            showNotification("⏱️ You must view the ad for at least 30 seconds to complete the task!", "error");
+            showNotification("⏱️ You must view the ad for at least 45 seconds to complete the task!", "error");
           }
         }
       }, 500);
